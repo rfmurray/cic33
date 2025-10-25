@@ -1,16 +1,9 @@
 // lecture_code_1.cs
 
-// declaring a variable
-
-int trial_num;
-int trial_num = 1;
-
-trial_num = 100;
-
-// dotnetfiddle.net; use compiler version 9
+// run code at dotnetfiddle.net; use compiler version 9
 
 using System;
-					
+
 public class Program
 {
     public static void Main()
@@ -19,8 +12,12 @@ public class Program
     }
 }
 
-// add this code to .NET Fiddle
+// declaring and using a variable; C# is a "strongly typed" language
+
+int trial_num;
 int trial_num = 1;
+trial_num = 100;
+
 Console.WriteLine(trial_num);
 
 // data types
@@ -34,10 +31,8 @@ byte grey = 128;               // unsigned integer, with 8 bits of precision (0-
 // type casting
 
 double x = 1;
-int y = x;  // error
-
-double x = 1;
-int y = (int)x;
+int y = x;       // error
+int y = (int)x;  // ok
 
 // arrays
 
@@ -48,20 +43,16 @@ trialNums[2] = 100;
 
 // arithmetic
 
+double x = 1 + ((2 - 3) / (4 * 5)); // automatic rounding
 double x = 1d + ((2d-3d)/(4d*5d));
-
 // note: ^ is not exponentiation; it is bitwise xor
-
-x += 5;
-x = x + 5;
-
-x++;
-x = x + 1;
 
 // if statements
 
 if (a > 0)
     b = 1;
+
+// we indent code for human readers; C# doesn't care
 
 if (a > 0)
 {
@@ -107,14 +98,14 @@ while (a < 10)
 }
 
 int a = 0;
-while (true)
+while (true)  // loop indefinitely
 {
     a++;
     if (a <= 10)
-        continue;
+        continue;  // return to beginning of loop
     Console.WriteLine(a);
     if (a >= 15)
-        break;	
+        break;	   // exit loop
 }
 
 // for loops
@@ -123,13 +114,9 @@ k = 0;
 for (i = 0; i <= 10; i++)
     k = k + i;
 
-k = 0;
-for (int i = 0; i <= 10; i++)
-    k = k + i;
-
 // functions
 
-double calc(int a, int b)
+double calc(int a, int b)  // again, note attention to data types
 {
     double c = 0.5*(3*a + 2*b);
     c = c + 10;
@@ -160,9 +147,9 @@ using System;
 Random rng = new Random();
 int x = rng.Next(0, 100);
 
-int[] trialNums = new int[5]; // note the similarity
+int[] trialNums = new int[5];  // note the similarity
 
-float elapsed_time = UnityEngine.Time.time;  // a static method
+double x = Math.Pow(2,3);  // a static method
 
 // namespaces
 
@@ -176,10 +163,6 @@ public class Program
 }
 
 using UnityEngine.Rendering.HighDefinition;
-
-using System;
-double x = Math.Pow(2, 8);
-double u = Math.Sin(Math.PI/2);
 
 // bubblesort
 

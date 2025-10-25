@@ -53,7 +53,7 @@ float x = Random.Range(0f, 100f);  // lower and upper limits are inclusive
 int rngseed = (int)System.DateTime.Now.Ticks;
 Random.InitState(rngseed);
 
-// UnityEngine.Random vs. System.Random
+// UnityEngine.Random vs. System.Random, e.g., static function vs. object
 
 // strings
 
@@ -68,7 +68,7 @@ using System.IO;
 
 filename = "data.txt";
 
-using (StreamWriter writer = new StreamWriter(filename, true))
+using (StreamWriter writer = new StreamWriter(filename, true))  // true = append, false = overwrite
     writer.WriteLine(dataline);
 
 // getting the current time
